@@ -26,13 +26,13 @@
 #### Initialize Terraform using S3 as the remote backend
 > To intialize Terraform using S3 as the remote backend, edit the `backend_s3.hcl` file, replacing the below properties:
 >
-> bucket = "S3 bucket name"
+> - bucket = "S3 bucket name"
 >
-> key    = "Path to the terraform.tfstate"
+> - key    = "Path to the terraform.tfstate"
 >
-> region = "AWS region where this bucket is located"
+> - region = "AWS region where this bucket is located"
 >
-> After the `backend_s3.hcl` file has been updated with the S3 bucket details, edit the `main.tf' file to use 's3' as the remote backend
+> After the `backend_s3.hcl` file has been updated with the S3 bucket details, edit the `main.tf` file to use 's3' as the remote backend. Please open the  `main.tf` file for instructions on how to do this
 >
 >
 > Now run the below command to initialize S3 with the terraform state files:
@@ -43,9 +43,9 @@
 #### Initialize Terraform using Terraform Cloud as the remote backend
 > To intialize Terraform using Terraform Cloud as the remote backend, edit the `backend.hcl` file, replacing the below properties:
 >
-> workspaces { name = "Name of your Terraform Cloud Workspace" }
+> - workspaces { name = "Name of your Terraform Cloud Workspace" }
 >
-> organization = "Name of your Terraform Cloud organization"
+> - organization = "Name of your Terraform Cloud organization"
 >
 > *For instructions on setting up your free Terraform Cloud Account see [Getting Started with Terraform Cloud](https://learn.hashicorp.com/collections/terraform/cloud-get-started)* 
 > 
@@ -106,7 +106,7 @@
 > | AWS_ACCESS_KEY_ID
 > | AWS_SECRET_ACCESS_KEY
 >
->> To configure GitHubs secretes, please see [GitHub Encrypted secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)
+>> *To configure GitHubs secretes, please see [GitHub Encrypted secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)*
 >
   #### Configure GitHub Actions to use Terraform Cloud as the remote backend
 >
@@ -116,6 +116,6 @@
 > | ----------------------------------------
 > | TF_API_TOKEN
 >
->> To generate a Terraform Cloud Team API Token , please see [Terraform Cloud Team API Token](https://www.terraform.io/docs/cloud/users-teams-organizations/api-tokens.html)
+>> *To generate a Terraform Cloud Team API Token , please see [Terraform Cloud Team API Token](https://www.terraform.io/docs/cloud/users-teams-organizations/api-tokens.html)*
 >
 </details>
