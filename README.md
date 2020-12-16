@@ -1,6 +1,6 @@
 # An Template Repository using GitHub Actions and Terraform
 
-> A template repository for provisioning a AWS resources. The template supports both Terraform Cloud or AWS S3 to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
+> A template repository for provisioning AWS resources using Terraform. The template supports both Terraform Cloud or AWS S3 to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
 
 
 ### Installing and running this project
