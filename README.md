@@ -1,24 +1,30 @@
-# AWS-API-Gateway ![Project Status](https://img.shields.io/badge/proof--of--concept-in--progress-blue)![Terraform](https://github.com/AWS-Terraform-Projects/AWS-API-Gateway/workflows/Terraform/badge.svg)
+# An Template Repository using GitHub Actions and Terraform
 
-> A Terraform project for provisioning an AWS API Gateway using an OpenAPI specification file to configure each route in the gateway. The project will also use Terragrunt to keep the configurations DRY. Terraform Cloud is used to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
+> A template repository for provisioning a AWS resources. The template supports both Terraform Cloud or AWS S3 to manage the the project's remote files. GitHub Actions is used to implement the CI/CD pipeline
 
-### CI/CD pipeline for AWS API Gateway using GitHub Actions & Terraform
-<kbd><img src="./documentation/API-Gateway.jpg" /></kbd>
 
 ### Installing and running this project
+<details>
+  <summary>Using this template repository</summary>
+
+  #### Choose the `Use this template` to create a new repository using this template repository as shown below
+  
+  <kbd><img src="./documentation/use-terraform-template.png" /></kbd>
+</details>
+
 <details>
   <summary>Prerequisites for running this project</summary>
   
 #### The project has the following dependencies  
-- AWS CLI version 2
-- Terraform CLI 0.14.2 
+- AWS CLI version 2. To install the AWS CLI, please see [Installing, updating, and uninstalling the AWS CLI version 2](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- Terraform CLI 0.14.2 . To install Terraform CLI, please see [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli?in=terraform/aws-get-started)
 </details>
 
 <details>
-  <summary>Initialize and run this proect</summary>
+  <summary>Initialize and run this project</summary>
   
 #### Initialize Terraform using S3 as the remote backend
-> To intialize Terraform using S3 as the remote backend, edit the `backend_s3.hcl` file, replace the following properties:
+> To intialize Terraform using S3 as the remote backend, edit the `backend_s3.hcl` file, replacing the below properties:
 >
 > bucket = "S3 bucket name"
 >
@@ -35,19 +41,21 @@
 > ```
 
 #### Initialize Terraform using Terraform Cloud as the remote backend
-> To intialize Terraform using S3 as the remote backend, edit the `backend.hcl` file, replace the following properties:
+> To intialize Terraform using Terraform Cloud as the remote backend, edit the `backend.hcl` file, replacing the below properties:
 >
 > workspaces { name = "Name of your Terraform Cloud Workspace" }
 >
 > organization = "Name of your Terraform Cloud organization"
 >
->> *For instructions on setting up your free Terraform Cloud Account see [Getting Started with Terraform Cloud](https://learn.hashicorp.com/collections/terraform/cloud-get-started)*
->> 
->> Set the below 3 properties as environment variables in your Terraform Cloud workspace:
->> * AWS_DEFAULT_REGION 
->> * AWS_SECRET_ACCESS_KEY (**Use the sensitive checkbox to protect this value!!**)
->> * AWS_ACCESS_KEY_ID (**Use the sensitive checkbox to protect this value!!**)
+> *For instructions on setting up your free Terraform Cloud Account see [Getting Started with Terraform Cloud](https://learn.hashicorp.com/collections/terraform/cloud-get-started)* 
+> 
+> | Set the below 3 properties as environment variables in your Terraform Cloud workspace|
+> | -------------------------------------------------------------------------------------|
+> | AWS_DEFAULT_REGION |
+> | AWS_SECRET_ACCESS_KEY (**Use the sensitive checkbox to protect this value!!**) |
+> | AWS_ACCESS_KEY_ID (**Use the sensitive checkbox to protect this value!!**) |
 >
+> 
 > After the `backend.hcl` file has been updated with the Terraform Cloud's organization and workspace details, run the below command to login to your Terraform cloud workspace
 >
 > ```bash
@@ -84,4 +92,30 @@
 > ```bash
 > terraform destroy
 > ```
+</details>
+
+<details>
+  <summary>Configure GitHub Actions</summary>
+
+  #### Configure GitHub Actions to use S3 as the remote backend
+>
+> To configure GitHub Actions to use S3, the below 2 properties needs to be added as *GitHub Secrets*
+>
+> | GitHub Secrets for AWS S3 remote backend
+> | ----------------------------------------
+> | AWS_ACCESS_KEY_ID
+> | AWS_SECRET_ACCESS_KEY
+>
+>> To configure GitHubs secretes, please see [GitHub Encrypted secrets](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets)
+>
+  #### Configure GitHub Actions to use Terraform Cloud as the remote backend
+>
+> To configure GitHub Actions to use Terraform Cloud, the below property needs to be added as *GitHub Secrets*
+>
+> | GitHub Secrets for Terraform Cloud remote backend
+> | ----------------------------------------
+> | TF_API_TOKEN
+>
+>> To generate a Terraform Cloud Team API Token , please see [Terraform Cloud Team API Token](https://www.terraform.io/docs/cloud/users-teams-organizations/api-tokens.html)
+>
 </details>
