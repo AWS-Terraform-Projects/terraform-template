@@ -22,5 +22,5 @@ module "http_api_gateway" {
   source                       = "./modules/http-api-gateway"
   http_api_gateway_name        = var.http_api_gateway_name
   http_api_gateway_description = var.http_api_gateway_description
-  count=0
+  count                        = 0
 }
