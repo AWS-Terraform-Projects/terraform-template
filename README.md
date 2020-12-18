@@ -21,7 +21,7 @@
   <summary>Initialize and run this project</summary>
   <BR>
   
-Please see the ![wiki page](https://github.com/AWS-Terraform-Projects/terraform-template/wiki) for detailed instructions on using this template repository
+Please see the [wiki page](https://github.com/AWS-Terraform-Projects/terraform-template/wiki) for detailed instructions on using this template repository
  
 </details>
 
