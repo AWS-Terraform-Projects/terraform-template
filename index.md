@@ -6,7 +6,7 @@ This wiki page provides instructions on how to initialize a new Terraform reposi
 
 ## Create a new repository
 Start by creating a new GitHub repository by using this template repository. Click on the **Use this template** button as shown below
-  
+  <kbd><img src="https://github.com/AWS-Terraform-Projects/terraform-template/raw/master/documentation/use-terraform-template.png"></kbd>
 <kbd>![](https://github.com/AWS-Terraform-Projects/terraform-template/raw/master/documentation/use-terraform-template.png)</kbd>
 
 ## Configure a remote backend for Terraform
