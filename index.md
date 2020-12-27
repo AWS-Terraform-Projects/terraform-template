@@ -1,5 +1,5 @@
 # Overview
-This wiki page provides instructions on how to initialize a new Terraform repository using this template repository. By using this template repository as a base, the new repository will inherit the following functionalities:
+This wiki page provides instructions on how to initialize a new Terraform repository using this template repository. By using this template repository as a base, the new repository will inherit the following functionalities :
 
 1. A GitHub Actions CI/CD workflow that deploys to AWS
 2. A Terraform project structure that follows the best practices as recommended by Hashicorp
