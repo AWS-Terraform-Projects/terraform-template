@@ -7,7 +7,7 @@ This wiki page provides instructions on how to initialize a new Terraform reposi
 ## Create a new repository
 Start by creating a new GitHub repository by using this template repository. Click on the **Use this template** button as shown below
   
-<kbd>![](https://github.com/AWS-Terraform-Projects/terraform-template/blob/master/documentation/use-terraform-template.png)</kbd>
+![](https://github.com/AWS-Terraform-Projects/terraform-template/blob/master/documentation/use-terraform-template.png)
 
 ## Configure a remote backend for Terraform
 `Terraform` is a stateful build tool that needs to create and access its state across multiple deployments. These state files are used by `Terraform` to manage the resources it has created. While testing on local workstations, this files are created in the developer's workstation. But while running in a CI/CD pipeline on remote servers, these state files have to be persisted in a safe and consistent data store. This template repository supports the following two remote data stores:
